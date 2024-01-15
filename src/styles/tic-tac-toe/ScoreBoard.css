@@ -1,0 +1,36 @@
+.Tic-Tac-Toe_ScoreBoard {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    justify-content: center;
+
+    & .player {
+        margin: .5rem 1rem;
+        padding: .5rem;
+
+        border: 2px solid black;
+        border-radius: 1rem;
+
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 2rem;
+    }
+
+    & .player-one[data-turn='play'] {
+        background-color: var(--score-board-player-one-color);
+    }
+
+    & .player-one[data-turn='not-play'] {
+        background-color: transparent;
+    }
+
+    & .player-two[data-turn='play'] {
+        background-color: var(--score-board-player-two-color);
+    }
+
+    & .player-two[data-turn='not-play'] {
+        background-color: transparent;
+    }
+}

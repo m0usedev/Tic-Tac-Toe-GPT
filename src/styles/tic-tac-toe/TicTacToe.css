@@ -1,0 +1,73 @@
+.Tic-Tac-Toe {
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    & * {
+        margin: 0;
+    }
+
+    & .Tic-Tac-Toe_table-game {
+        width: 450px;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    & .first-box {
+        border-right: var(--tic-tac-toe-border);
+        border-bottom: var(--tic-tac-toe-border);
+    }
+    
+    & .second-box {
+        border-left: var(--tic-tac-toe-border);
+        border-bottom: var(--tic-tac-toe-border);
+        border-right: var(--tic-tac-toe-border);
+    }
+    
+    & .third-box {
+        border-bottom: var(--tic-tac-toe-border);
+        border-left: var(--tic-tac-toe-border);
+    }
+    
+    & .fourth-box {
+        border-top: var(--tic-tac-toe-border);
+        border-bottom: var(--tic-tac-toe-border);
+        border-right: var(--tic-tac-toe-border);
+    }
+    
+    & .fifth-box {
+        border-top: var(--tic-tac-toe-border);
+        border-bottom: var(--tic-tac-toe-border);
+        border-right: var(--tic-tac-toe-border);
+        border-left: var(--tic-tac-toe-border);
+    }
+    
+    & .sixth-box {
+        border-top: var(--tic-tac-toe-border);
+        border-bottom: var(--tic-tac-toe-border);
+        border-left: var(--tic-tac-toe-border);
+    }
+    
+    & .seventh-box {
+        border-top: var(--tic-tac-toe-border);
+        border-right: var(--tic-tac-toe-border);
+    }
+    
+    & .eighth-box {
+        border-left: var(--tic-tac-toe-border);
+        border-top: var(--tic-tac-toe-border);
+        border-right: var(--tic-tac-toe-border);
+    }
+    
+    & .ninth-box {
+        border-top: var(--tic-tac-toe-border);
+        border-left: var(--tic-tac-toe-border);
+    }
+    
+}
