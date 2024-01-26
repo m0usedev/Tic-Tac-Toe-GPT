@@ -5,42 +5,30 @@ import { useState } from 'react';
 import Box from './Box';
 import ScoreBoard from './ScoreBoard';
 
+import { referee } from '../../functions/tic-tac-toe_functions'
+
 import '../../styles/tic-tac-toe/TicTacToe.css'
 
 export default function TicTacToe () {
-    let [player, setPlayer] = useState(true)
+    let [player, setPlayer] = useState(0)
     let [points, setPoints] = useState([0, 0])
+    let [board, setBoard] = useState(Array(9).fill(null))
 
-    let classTable = [
-        "first-box",
-        "second-box",
-        "third-box",
-        "fourth-box",
-        "fifth-box",
-        "sixth-box",
-        "seventh-box",
-        "eighth-box",
-        "ninth-box"
-    ];
+    let tableBoxes = [];
 
-    let table = classTable.map ( (value, index) => {
-        return ( 
-                    <Box 
+    let onClick = (positionBox) => {
+        referee ( player, setPlayer, board, setBoard, points, setPoints, positionBox )
+    }
+
+    for (let index = 0; index < 9; index++) {
+        tableBoxes[index] = <Box 
                         key={index}
-                        classBox={value}   
-                        player={player} 
-                        setPlayer={setPlayer}
+                        classBox={'box-'+index}   
+                        positionBox={index}
+                        board= {board}
+                        onClick= {onClick}
                     /> 
-                )
-    })
-
-    /**
-     * funciones
-     *  -detectar que el panel esta lleno y no se puede jugar mas, no hay puntos
-     *  -detectar que ha habido linea y que el marcador aumente en uno en el ganador
-     *      -hacer que un efecto de vistoria
-     *  -añadir al mrcador numero de partidas
-     */
+    }
 
     return (
         <div className='module Tic-Tac-Toe'>
@@ -50,7 +38,7 @@ export default function TicTacToe () {
                 setPoints={setPoints}
             />
             <div className='Tic-Tac-Toe_table-game'>
-                {table}
+                {tableBoxes}
             </div>
         </div>
     )

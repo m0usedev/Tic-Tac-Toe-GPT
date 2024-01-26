@@ -1,29 +1,30 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
 
 import circle from '../../assets/tic-tac-toe/circle.png'
 import cross from '../../assets/tic-tac-toe/cross.png'
 
 import '../../styles/tic-tac-toe/Box.css'
 
-export default function Box ({ classBox = '', player, setPlayer }) {
-    let [chip, setChip] = useState('')
-
-    function putChip () {
-        setChip ( player ? circle : cross )
-        setPlayer( player ? false : true )
-    }
-
+export default function Box ({ classBox, positionBox, board, onClick }) {
     return (
-        <div className={'Tic-Tac-Toe_Box '+classBox} onClick = { putChip }>
-            { /*Asociamos el true al circle y el false al cross*/ }
-            <img  src={ chip } />
+        <div className={'Tic-Tac-Toe_Box '+classBox} onClick={() => onClick(positionBox)} >
+            <img  
+                src={ cross } 
+                className='Box_Cross' 
+                data-select={board[positionBox]==1 ? true : false} 
+            />
+            <img  
+                src={ circle } 
+                className='Box_Circle' 
+                data-select={board[positionBox]==0 ? true : false} 
+            />
         </div>
     )
 }
 
 Box.propTypes = {
-    classBox: PropTypes.strin,
-    player: PropTypes.bool,
-    setPlayer: PropTypes.func
+    classBox: PropTypes.string,
+    positionBox: PropTypes.int,
+    board: PropTypes.array,
+    onClick: PropTypes.func
 };

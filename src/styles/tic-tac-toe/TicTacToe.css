@@ -19,55 +19,55 @@
         justify-content: center;
     }
 
-    & .first-box {
+    & .box-0 {
         border-right: var(--tic-tac-toe-border);
         border-bottom: var(--tic-tac-toe-border);
     }
     
-    & .second-box {
+    & .box-1 {
         border-left: var(--tic-tac-toe-border);
         border-bottom: var(--tic-tac-toe-border);
         border-right: var(--tic-tac-toe-border);
     }
     
-    & .third-box {
+    & .box-2 {
         border-bottom: var(--tic-tac-toe-border);
         border-left: var(--tic-tac-toe-border);
     }
     
-    & .fourth-box {
+    & .box-3 {
         border-top: var(--tic-tac-toe-border);
         border-bottom: var(--tic-tac-toe-border);
         border-right: var(--tic-tac-toe-border);
     }
     
-    & .fifth-box {
+    & .box-4 {
         border-top: var(--tic-tac-toe-border);
         border-bottom: var(--tic-tac-toe-border);
         border-right: var(--tic-tac-toe-border);
         border-left: var(--tic-tac-toe-border);
     }
     
-    & .sixth-box {
+    & .box-5 {
         border-top: var(--tic-tac-toe-border);
         border-bottom: var(--tic-tac-toe-border);
         border-left: var(--tic-tac-toe-border);
     }
     
-    & .seventh-box {
+    & .box-6 {
         border-top: var(--tic-tac-toe-border);
         border-right: var(--tic-tac-toe-border);
     }
     
-    & .eighth-box {
+    & .box-7 {
         border-left: var(--tic-tac-toe-border);
         border-top: var(--tic-tac-toe-border);
         border-right: var(--tic-tac-toe-border);
     }
     
-    & .ninth-box {
+    & .box-8 {
         border-top: var(--tic-tac-toe-border);
         border-left: var(--tic-tac-toe-border);
     }
-    
+     
 }
