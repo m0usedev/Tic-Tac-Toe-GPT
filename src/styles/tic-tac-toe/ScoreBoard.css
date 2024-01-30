@@ -1,36 +1,94 @@
 .Tic-Tac-Toe_ScoreBoard {
     width: 100%;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-
-    justify-content: center;
-
-    & .player {
-        margin: .5rem 1rem;
-        padding: .5rem;
-
-        border: 2px solid black;
-        border-radius: 1rem;
-
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 2rem;
+    & .ScoreBoard_points[data-view=true],
+    & .ScoreBoard_victory[data-view=true] {
+        display: flex;
     }
 
-    & .player-one[data-turn='play'] {
-        background-color: var(--score-board-player-one-color);
+    & .ScoreBoard_points[data-view=false],
+    & .ScoreBoard_victory[data-view=false] {
+        display: none;
     }
 
-    & .player-one[data-turn='not-play'] {
-        background-color: transparent;
+    & .ScoreBoard_points {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    
+        justify-content: center;
+
+        .player {
+            margin: .5rem 1rem;
+            padding: .5rem;
+    
+            border: 2px solid black;
+            border-radius: 1rem;
+    
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 2rem;
+        }
+    
+        .player-one[data-turn='play'] {
+            background-color: var(--score-board-player-one-color);
+        }
+    
+        .player-one[data-turn='not-play'] {
+            background-color: transparent;
+        }
+    
+        .player-two[data-turn='play'] {
+            background-color: var(--score-board-player-two-color);
+        }
+    
+        .player-two[data-turn='not-play'] {
+            background-color: transparent;
+        }
+
     }
 
-    & .player-two[data-turn='play'] {
-        background-color: var(--score-board-player-two-color);
-    }
+    & .ScoreBoard_victory {
+        justify-content: center;
+        align-items: center;
 
-    & .player-two[data-turn='not-play'] {
-        background-color: transparent;
+        .one-player-win,
+        .draw-win {
+            flex-direction: row;
+            flex-wrap: nowrap;
+        
+            justify-content: center;
+            align-items: center;
+        }
+
+        & *[data-view=false] {
+            display: none;
+        }
+    
+        & *[data-view=true] {
+            display: flex;
+        }
+
+        & .img-player {
+            & *[data-select=false] {
+                display: none;
+            }
+        
+            & *[data-select=true] {
+                display: block;
+            }
+        }
+
+        & img {
+            width: 5rem;
+            height: 5rem;
+        }
+
+        & .main-content {
+            margin-left: .5rem;
+            
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 5rem;
+            color: yellow;
+            font-weight: 700;
+        }
     }
 }

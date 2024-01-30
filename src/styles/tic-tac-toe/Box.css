@@ -4,8 +4,8 @@
 
     padding: .5rem;
 
-    & .Box_Circle[data-select='false'],
-    & .Box_Cross[data-select='false'] {
+    & .Box_Circle[data-select=false],
+    & .Box_Cross[data-select=false] {
         display: none;
     }
 
@@ -14,13 +14,13 @@
         display: block;
     }
 
-    &:has(>.Box_Circle[data-select='false']),
-    &:has(>.Box_Cross[data-select='false']) {
+    &:has(>.Box_Circle[data-select=false]),
+    &:has(>.Box_Cross[data-select=false]) {
         pointer-events: all;
     }
 
     &:has(>.Box_Circle[data-select=true]),
     &:has(>.Box_Cross[data-select=true]) {
-        pointer-events: all;
+        pointer-events: none;
     }
 }

@@ -1,9 +1,16 @@
+export function reset ( setPlayer, setBoard, setPoints ) {
+    resetBoard ( setPlayer, setBoard )
+    setPoints([0, 0])
+}
 
-
-export function referee ( player, setPlayer, board, setBoard, points, setPoints, positionBox ) {
+export function referee ( player, setPlayer, board, setBoard, points, setPoints, victory, setVictory, positionBox ) {
     const workBoard = boardUpdate ( player, board, setBoard, positionBox )
-    const validation = boardValiation ( workBoard, points, setPoints, player, setPlayer )
-    validation ? resetBoard ( setPlayer, setBoard ) : null
+    const validation = boardValiation ( workBoard, points, setPoints, player, setPlayer, victory, setVictory )
+    validation ? 
+        setTimeout( () => 
+                    resetBoard ( setPlayer, setBoard, player, victory, setVictory ) 
+                    , 3000)
+        : null
 }
 
 function boardUpdate ( player, board, setBoard, positionBox ) {
@@ -17,11 +24,12 @@ function boardUpdate ( player, board, setBoard, positionBox ) {
     return workBoard;
 }
 
-function boardValiation ( workBoard, points, setPoints, player, setPlayer) {
+function boardValiation ( workBoard, points, setPoints, player, setPlayer, victory, setVictory ) {
     // evaluar partida
     let [evalResult, evalType] = horizontalVictory ( workBoard, player )
     // evaluar resultado
     if ( evalResult && evalType != 'Draw' ){
+        setVictory( [victory[0] ? false : true, false] )
         setPoints ( [ player == 0 ? points[0]+1 : points[0], 
                     player == 1 ? points[1]+1 : points[1] ] )
         return true
@@ -29,13 +37,15 @@ function boardValiation ( workBoard, points, setPoints, player, setPlayer) {
         setPlayer ( player ? 0 : 1 )
         return false
     } else {
+        setVictory( [victory[0] ? false : true, true] )
         return true
     }
 }
 
-function resetBoard ( setPlayer, setBoard ) {
+function resetBoard ( setPlayer, setBoard, player = true, victory = null, setVictory = null ) {
+    victory != null ? setVictory([false, false]) : null
     setBoard(Array(9).fill(null))
-    setPlayer ( 0 )
+    setPlayer ( player ? 0 : 1 )
 }
 
 function horizontalVictory ( workBoard, player ) {
