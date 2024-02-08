@@ -30,7 +30,7 @@ npm install
 5. Después ejecutar el comando: 
 
 ```
-npm run preview
+npm run dev
 ```
 
 6. Abre el enlace que se te genera y prueba el proyecto ;)
