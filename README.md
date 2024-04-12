@@ -2,6 +2,11 @@
 
 Proyecto desarrollado en React.js para jugar partidas de Tic-Tac-Toe o Tres en Raya.
 
+<p align="center">
+  <img src="https://github.com/m0usedev/mouse-tracking-React.js/assets/127488603/aa0b0fde-890e-4166-b050-635ef8ba8556" width="546" height="360">
+</p>
+
+
 ## 📖 Comentarios del desarrollo:
 
 Este proyecto fue muy interesante y divertido de realizar debido a la práctica y los desafíos que me hizo enfrentar en relación a React.js. Además, me permitió introducirme en el compilador Vite, lo que mejora la experiencia de desarrollo y el proyecto en general.
